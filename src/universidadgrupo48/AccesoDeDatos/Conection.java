@@ -20,7 +20,7 @@ public class Conection {
 
     public Conection(String bd) {
         url = "jdbc:mariadb://localhost/";
-        this.bd = bd;
+        bd = "universidadgr48";
         usuario = "root";
         pass = "";
         driver = "org.mariadb.jdbc.Driver";

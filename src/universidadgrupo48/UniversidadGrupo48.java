@@ -15,7 +15,7 @@ public class UniversidadGrupo48 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Conection con = new Conection("universidadgr48");
+        
     }
     
 }
