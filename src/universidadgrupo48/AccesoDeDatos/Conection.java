@@ -18,7 +18,7 @@ public class Conection {
     private String url,bd,usuario,pass,driver;
     private Connection conn;
 
-    public Conection(String bd) {
+    public Conection() {
         url = "jdbc:mariadb://localhost/";
         bd = "universidadgr48";
         usuario = "root";
