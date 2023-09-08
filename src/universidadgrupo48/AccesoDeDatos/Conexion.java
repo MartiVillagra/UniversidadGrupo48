@@ -14,30 +14,27 @@ import java.sql.SQLException;
  *
  * @author Nova
  */
-public class Conection {
-    private String url,bd,usuario,pass,driver;
-    private Connection conn;
+public class Conexion {
+    private static final String URL = "jdbc:mariadb://localhost/";
+    private static final String DB = "universidadgr48";
+    private static final String USUARIO = "root";
+    private static final String PASS = "";
+    private static Connection conn;
 
-    public Conection() {
-        url = "jdbc:mariadb://localhost/";
-
-        bd = "universidadgr48";
-
-        bd = "univesidadgr48";
-        
-        usuario = "root";
-        pass = "";
-        driver = "org.mariadb.jdbc.Driver";
-    }
-    public Connection conectar(String bd){
-        try {
-            Class.forName(driver); 
+    private Conexion() {}
+    
+    public static Connection conectar(){
+        if (conn==null) {
+         try {
+            Class.forName("org.mariadb.jdbc.Driver"); 
             System.out.println("conectado con exito");
-            conn=DriverManager.getConnection(url+bd,usuario,pass);
+            conn=DriverManager.getConnection(URL+DB,USUARIO,PASS);
             
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Error de conexión");
+        }   
         }
+        
         return conn;
     } 
     

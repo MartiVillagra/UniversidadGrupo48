@@ -23,11 +23,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Materia"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu2ActionPerformed"/>
+          </Events>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="jmFDM">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Formulario de materia"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmFDMActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

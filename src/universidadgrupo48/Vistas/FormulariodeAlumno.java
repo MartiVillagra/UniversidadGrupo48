@@ -44,6 +44,8 @@ public class FormulariodeAlumno extends javax.swing.JInternalFrame {
         jbEliminar = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
 
+        setClosable(true);
+
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
