@@ -32,7 +32,9 @@ public class Conection {
     public Connection conectar(String bd){
         try {
             Class.forName(driver); 
+            System.out.println("conectado con exito");
             conn=DriverManager.getConnection(url+bd,usuario,pass);
+            
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Error de conexión");
         }

@@ -10,7 +10,7 @@ package universidadgrupo48.Entidades;
  * @author Nova
  */
 public class Materia {
-     private int idMatreia;
+     private int idMateria;
     private String nombre;
     private int anioMateria;
     private boolean activo;
@@ -25,18 +25,18 @@ public class Materia {
     }
 
     public Materia(int idMatreia, String nombre, int anioMateria, boolean activo) {
-        this.idMatreia = idMatreia;
+        this.idMateria = idMatreia;
         this.nombre = nombre;
         this.anioMateria = anioMateria;
         this.activo = activo;
     }
 
     public int getIdMatreia() {
-        return idMatreia;
+        return idMateria;
     }
 
     public void setIdMatreia(int idMatreia) {
-        this.idMatreia = idMatreia;
+        this.idMateria = idMatreia;
     }
 
     public String getNombre() {
@@ -62,4 +62,10 @@ public class Materia {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
+
+    @Override
+    public String toString() {
+        return "Materia{" + "idMateria=" + idMateria + ", nombre=" + nombre + ", anioMateria=" + anioMateria + ", activo=" + activo + '}';
+    }
+    
 }
