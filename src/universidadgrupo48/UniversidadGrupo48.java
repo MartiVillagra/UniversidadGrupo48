@@ -53,6 +53,60 @@ public class UniversidadGrupo48 {
         nuevoAlu = new Alumno(28778456,"Pillon","Ignacio",LocalDate.of(1978, Month.JUNE ,13),true);
         alu = new AlumnoData();
         alu.guardarAlumno(nuevoAlu);
+        
+        //carga de materias
+//        
+//        Materia nuevaMat = new Materia("Matematicas",1,true);
+//        MateriaData mat = new MateriaData();
+//        mat.guardarMateria(nuevaMat);
+//        
+//        ManuevaMat = new Materia("Algebra",1,true);
+//        mat = new MateriaData();
+//        mat.guardarMateria(nuevaMat);
+//        
+//        nuevaMat = new Materia("Ingles 1",1,true);
+//        mat = new MateriaData();
+//        mat.guardarMateria(nuevaMat);
+//        
+//        nuevaMat = new Materia("Programacion",1,true);
+//        mat = new MateriaData(); 
+//        mat.guardarMateria(nuevaMat);
+//        
+//        //**************
+//        nuevaMat = new Materia("Redes",2,true);
+//        mat = new MateriaData();
+//        mat.guardarMateria(nuevaMat);
+//        
+//        nuevaMat = new Materia("Digitales",2,true);
+//        mat = new MateriaData();
+//        mat.guardarMateria(nuevaMat);
+//        
+//        nuevaMat = new Materia("Laboratorio 1",2,true);
+//        mat = new MateriaData();
+//        mat.guardarMateria(nuevaMat);
+//        
+//        nuevaMat = new Materia("Ingles 2",2,true);
+//        mat = new MateriaData();
+//        mat.guardarMateria(nuevaMat);
+//        
+//        //******************
+//        
+//        nuevaMat = new Materia("Sistemas Operativos",3,true);
+//        mat = new MateriaData();
+//        mat.guardarMateria(nuevaMat);
+//        
+//        nuevaMat = new Materia("Base de datos",3,true);
+//        mat = new MateriaData();
+//        mat.guardarMateria(nuevaMat);
+//        
+//        nuevaMat = new Materia("Electronioca",3,true);
+//        mat = new MateriaData();
+//        mat.guardarMateria(nuevaMat);
+//        
+//        nuevaMat = new Materia("Estadistica",3,true);
+//        mat = new MateriaData();
+//        mat.guardarMateria(nuevaMat);
+       
 
     }
     
