@@ -6,14 +6,17 @@ import java.time.LocalDate;
 import java.time.Month;
 import javax.swing.JOptionPane;
 import universidadgrupo48.AccesoDeDatos.AlumnoData;
+import universidadgrupo48.AccesoDeDatos.Conexion;
+import universidadgrupo48.AccesoDeDatos.MateriaData;
 import universidadgrupo48.Entidades.Alumno;
+import universidadgrupo48.Entidades.Materia;
 
 public class UniversidadGrupo48 {
 
     public static void main(String[] args) {
-        //Alumno juan = new Alumno(3,38439685,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
-       // AlumnoData alu = new AlumnoData();
-       // alu.guardarAlumno(juan);
+        //Alumno juan = new Alumno(38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
+        //AlumnoData alu = new AlumnoData();
+        //alu.guardarAlumno(juan);
         //alu.modificaAlumno(juan);
        // alu.eliminarAlumno(3);
       // Alumno alumnoEncontrado =alu.buscarPorDNI(38439684);
@@ -25,12 +28,29 @@ public class UniversidadGrupo48 {
             JOptionPane.showMessageDialog(null,"alumno no encontrado");
         }*/
 
-      AlumnoData alu =new AlumnoData();
+      /*AlumnoData alu =new AlumnoData();
         for (Alumno alumno : alu.listarAlumno()) {
             System.out.println(alumno.toString());
-        }
+        }*/
+      
+      Materia lengua = new Materia();
+      
+      MateriaData data1 = new MateriaData();
+      
+      
+      //data1.guardarMateria(lengua);
+      
+      
+      
+      Materia materiaEncontrada = data1.buscarMateriaPorID(3);
+      if (materiaEncontrada != null){
+          System.out.println(materiaEncontrada.toString());
+      }
     }
-}
+      
+      
+    }
+
     
 
         

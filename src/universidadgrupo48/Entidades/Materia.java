@@ -18,25 +18,27 @@ public class Materia {
     public Materia() {
     }
 
+    public Materia(int idMateria, String nombre, int anioMateria, boolean activo) {
+        this.idMateria = idMateria;
+        this.nombre = nombre;
+        this.anioMateria = anioMateria;
+        this.activo = activo;
+    }
+    
     public Materia(String nombre, int anioMateria, boolean activo) {
         this.nombre = nombre;
         this.anioMateria = anioMateria;
         this.activo = activo;
     }
 
-    public Materia(int idMatreia, String nombre, int anioMateria, boolean activo) {
-        this.idMateria = idMatreia;
-        this.nombre = nombre;
-        this.anioMateria = anioMateria;
-        this.activo = activo;
-    }
+    
 
-    public int getIdMatreia() {
+    public int getIdMateria() {
         return idMateria;
     }
 
-    public void setIdMatreia(int idMatreia) {
-        this.idMateria = idMatreia;
+    public void setIdMateria(int idMateria) {
+        this.idMateria = idMateria;
     }
 
     public String getNombre() {
