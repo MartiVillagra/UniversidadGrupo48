@@ -179,4 +179,7 @@ public class AlumnoData {
         
         
     } 
+       public void prueva(){
+           
+       }
 }
