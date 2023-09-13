@@ -40,7 +40,7 @@ public class AlumnoData {
     }
     public void modificaAlumno(Alumno alumno){
         
-        String sql= "UPDATE alumno SET dni=?, apellido=?,nombre=? ,fechaNacimiento=? WHERE idAlumno =?";
+        String sql= "UPDATE alumno SET dni=?, apellido=?,nombre=? ,fechaNacimiento=? WHERE idAlumno =?  AND estado=1 ";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, alumno.getDni());

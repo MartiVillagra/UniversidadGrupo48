@@ -5,6 +5,7 @@
 package universidadgrupo48.AccesoDeDatos;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -77,6 +78,62 @@ public class MateriaData {
         return materia;
         
     }
+    
+    public void modificarMateria(Materia materia){
+        String sql = "UPDATE materia SET nombre= ?,anio=? WHERE idMateria=? and estado=1 ";
+        PreparedStatement ps=null;
+        try {
+            ps=con.prepareStatement(sql);
+            ps.setString(1, materia.getNombre());
+            ps.setInt(2, materia.getAnioMateria());
+            ps.setInt(3, materia.getIdMateria());
+            int resul= ps.executeUpdate();
+            if(resul==1){
+                JOptionPane.showMessageDialog(null, " Materia modificada");
+            }
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Modificacion no realizada");
+        }
+    }
+    
+    public void eliminarMateria(int id){
+            
+      String sql ="UPDATE materia SET estado = 0 WHERE idMateria=?";
+        try {
+            PreparedStatement ps= con.prepareStatement(sql);
+            ps.setInt(1, id);
+            
+            int result=ps.executeUpdate();
+            
+            if(result==1){
+                JOptionPane.showMessageDialog(null, "Materia eliminada");
+            }
+        } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Materia no encontrada");
+        }
+        }
+      public ArrayList<Materia> listarMateria(){
+         String sql=" SELECT idMateria,nombre,anio FROM materia WHERE estado=1";
+         ArrayList<Materia> materias= new ArrayList();
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs= ps.executeQuery();
+            while (rs.next()){
+                Materia materia= new Materia();
+                materia.setIdMateria(rs.getInt("idMateria"));
+                materia.setNombre(rs.getString("nombre"));
+                materia.setAnioMateria(rs.getInt("anio"));
+                materia.setActivo(true);
+            materias.add(materia);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error no hay materias");
+        }
+        return materias; 
+    }
+            
 }
     
 
