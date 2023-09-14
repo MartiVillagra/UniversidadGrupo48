@@ -61,8 +61,12 @@ public class UniversidadGrupo48 {
      Materia lengua = new Materia(1,"base de datos",1,true);
      
      InscripcionData insData= new InscripcionData();
-     Inscripcion insc =new Inscripcion(juan, lengua, 7);
-     insData.guardarInscripcion(insc);
+//     Inscripcion insc =new Inscripcion(juan, lengua, 7);
+//     insData.guardarInscripcion(insc);
+
+        for (Inscripcion inscripcion : insData.obtenerInscripciones()) {
+            System.out.println(inscripcion.toString());
+        }
      
         }
           
