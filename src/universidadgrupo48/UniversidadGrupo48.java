@@ -16,7 +16,8 @@ import universidadgrupo48.Entidades.Materia;
 public class UniversidadGrupo48 {
 
     public static void main(String[] args) {
-        Alumno juan = new Alumno(38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
+ //       Connection con = Conexion.getConexion();    
+       // Alumno juan = new Alumno(38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
         //AlumnoData alu = new AlumnoData();
         //alu.guardarAlumno(juan);
         //alu.modificaAlumno(juan);
@@ -35,7 +36,7 @@ public class UniversidadGrupo48 {
             System.out.println(alumno.toString());
         }*/
       
-          Materia lengua = new Materia("base de datos",1,true);    
+         // Materia lengua = new Materia("base de datos",1,true);    
 //        MateriaData data1 = new MateriaData();
 //        data1.guardarMateria(lengua);
    
@@ -56,8 +57,11 @@ public class UniversidadGrupo48 {
      //*********************************************
      // inscripcion guardar iscripcion
      
+     Alumno juan = new Alumno(1,38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
+     Materia lengua = new Materia(1,"base de datos",1,true);
+     
      InscripcionData insData= new InscripcionData();
-     Inscripcion insc =new Inscripcion(7,"juan","lengua",true);
+     Inscripcion insc =new Inscripcion(juan, lengua, 7);
      insData.guardarInscripcion(insc);
      
         }
