@@ -64,14 +64,23 @@ public class UniversidadGrupo48 {
 //     Inscripcion insc =new Inscripcion(juan, lengua, 7);
 //     insData.guardarInscripcion(insc);
 
-        for (Inscripcion inscripcion : insData.obtenerInscripciones()) {
+       /* for (Inscripcion inscripcion : insData.obtenerInscripciones()) {
             System.out.print("idInscripcion: "+inscripcion.getIdInscripcion());
             System.out.print(" Nota: "+inscripcion.getNota());
             System.out.print(" idAlumno: "+inscripcion.getAlumno().getIdAlumno());
             System.out.print(" idMateria: "+inscripcion.getMateria().getIdMateria());
             System.out.println("");
-        }
-     
+        }*/
+     for (Inscripcion inscripcion : insData.obtenerInscripcionesPorAlumno(4)){
+         
+         System.out.println(" idInscripcion " + inscripcion.getIdInscripcion());
+         System.out.println(" idAlumno "  + inscripcion.getAlumno().getIdAlumno());
+         System.out.println(" idMateria " + inscripcion.getMateria().getIdMateria());
+         System.out.println(" nombre materia " + inscripcion.getMateria().getNombre());
+         System.out.println(" nombre alumno "  + inscripcion.getAlumno().getNombre());
+         System.out.println(" apellido alumno "  + inscripcion.getAlumno().getApellido());
+         System.out.println("--------------------------------------------------------");
+     }
         }
           
     }
