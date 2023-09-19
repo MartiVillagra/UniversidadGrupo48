@@ -82,7 +82,7 @@ public class UniversidadGrupo48 {
          System.out.println("--------------------------------------------------------");
      }
 */
-     for (Materia materia : insData.obtenerMateriasCursadas(6)){
+     for (Materia materia : insData.obtenerMateriasCursadas(1)){
          System.out.println("idMateria " + materia.getIdMateria());
          System.out.println("Nombre " + materia.getNombre());
          System.out.println("Año " + materia.getAnioMateria());
