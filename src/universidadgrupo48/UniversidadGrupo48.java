@@ -71,7 +71,7 @@ public class UniversidadGrupo48 {
             System.out.print(" idMateria: "+inscripcion.getMateria().getIdMateria());
             System.out.println("");
         }*/
-     for (Inscripcion inscripcion : insData.obtenerInscripcionesPorAlumno(4)){
+     for (Inscripcion inscripcion : insData.obtenerInscripcionesPorAlumno(1)){
          
          System.out.println(" idInscripcion " + inscripcion.getIdInscripcion());
          System.out.println(" idAlumno "  + inscripcion.getAlumno().getIdAlumno());

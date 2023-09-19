@@ -72,7 +72,7 @@ public class InscripcionData {
     }
 
     public ArrayList<Inscripcion> obtenerInscripcionesPorAlumno(int id) {
-        String sql = "SELECT ins.idAlumno,ins.idMateria,idInscripcion, ma.nombre,apellido,alu.nombre FROM inscripcion ins JOIN materia ma"
+        String sql = "SELECT ins.idAlumno,ins.idMateria,idInscripcion, ma.nombre as materia,apellido,alu.nombre FROM inscripcion ins JOIN materia ma"
                 + ",alumno alu  WHERE ins.idAlumno=? AND ins.idAlumno = alu.idAlumno AND ins.idMateria = ma.idMateria ";
         ArrayList<Inscripcion> inscripciones = new ArrayList();
         try {
@@ -90,7 +90,7 @@ public class InscripcionData {
                 insc.setMateria(mat);
                 alu.setNombre(rs.getString("nombre"));
                 alu.setApellido(rs.getString("apellido"));
-                mat.setNombre(rs.getString("nombre"));
+                mat.setNombre(rs.getString("materia"));
                
                 inscripciones.add(insc);
 
