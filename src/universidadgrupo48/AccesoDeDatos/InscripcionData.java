@@ -105,7 +105,7 @@ public class InscripcionData {
     }
 
     public ArrayList<Materia> obtenerMateriasCursadas(int id) {
-        String sql= "SELECT ins.idMateria, nombre, anio FROM inscripcion ins, materia ma"
+        String sql= "SELECT ins.idMateria, nombre, anio FROM inscripcion ins, materia ma,"
                 + "WHERE ins.idMateria = ma.idMateria AND ins.idAlumno = ?";
         ArrayList <Materia>materias = new ArrayList();
         try {
