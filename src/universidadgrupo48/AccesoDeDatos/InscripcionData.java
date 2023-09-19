@@ -105,25 +105,31 @@ public class InscripcionData {
     }
 
     public ArrayList<Materia> obtenerMateriasCursadas(int id) {
-        String sql= "SELECT  idMateria , ma.nombre,anio, alu.nombre,apellido,dni FROM materia ma JOIN  alumno alu, inscripcion WHERE idalumno=?"
-                + " AND ins.idMateria = ma.idMateria AND ins.idAlumno= alu.idAlumno ";
+        String sql= "SELECT ins.idMateria, nombre, anio FROM inscripcion ins, materia ma"
+                + "WHERE ins.idMateria = ma.idMateria AND ins.idAlumno = ?";
         ArrayList <Materia>materias = new ArrayList();
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
+            System.out.println("-1");
+            ResultSet rs = ps.executeQuery();    
+            System.out.println("0");
+            
+            Materia materia;
+            
             while(rs.next()){
-                Inscripcion insc =new Inscripcion();
-                Alumno alu =aluData.buscarPorID(rs.getInt("idAlumno"));
-                Materia mat =matData.buscarMateriaPorID(rs.getInt("idMateria"));
-                insc.setAlumno(alu);
-                insc.setMateria(mat);
-                mat.setNombre(rs.getString("nombre"));
-                mat.setAnioMateria(rs.getInt("anio"));
-                alu.setApellido(rs.getString("apellido"));
-                alu.setNombre(rs.getString("nombre"));
-                alu.setDni(rs.getInt("dni"));
-              materias.add(mat);
+                
+                materia = new Materia();
+                
+                System.out.println("1");
+                
+                
+                System.out.println("2");
+                materia.setIdMateria(rs.getInt("idMateria"));
+                materia.setNombre(rs.getString("nombre"));
+                materia.setAnioMateria(rs.getInt("anio"));
+                
+              materias.add(materia);
               
                 
                 
@@ -146,6 +152,7 @@ public class InscripcionData {
     }
 
     public void borrarInscripcionMateriaAlumno(int idAlumno, int idMateria) {
+        
 
     }
 

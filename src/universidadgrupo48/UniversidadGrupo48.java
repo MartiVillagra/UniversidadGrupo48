@@ -71,7 +71,7 @@ public class UniversidadGrupo48 {
             System.out.print(" idMateria: "+inscripcion.getMateria().getIdMateria());
             System.out.println("");
         }*/
-     for (Inscripcion inscripcion : insData.obtenerInscripcionesPorAlumno(1)){
+     /*for (Inscripcion inscripcion : insData.obtenerInscripcionesPorAlumno(1)){
          
          System.out.println(" idInscripcion " + inscripcion.getIdInscripcion());
          System.out.println(" idAlumno "  + inscripcion.getAlumno().getIdAlumno());
@@ -81,7 +81,17 @@ public class UniversidadGrupo48 {
          System.out.println(" apellido alumno "  + inscripcion.getAlumno().getApellido());
          System.out.println("--------------------------------------------------------");
      }
-        }
+*/
+     for (Materia materia : insData.obtenerMateriasCursadas(6)){
+         System.out.println("idMateria " + materia.getIdMateria());
+         System.out.println("Nombre " + materia.getNombre());
+         System.out.println("Año " + materia.getAnioMateria());
+     
+     
+     }
+    
+    
+    }
           
     }
       
