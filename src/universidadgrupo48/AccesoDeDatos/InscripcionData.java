@@ -123,7 +123,7 @@ public class InscripcionData {
         return materias;
     }
  
-///******************Paso idAlumnono y muestro materia que no esta inscripto(usar el gestor)
+//******************Paso idAlumnono y muestro materia que no esta inscripto(usar el gestor)
     public ArrayList<Materia> obtenerMateriaNoCursada(int id) {
         ArrayList<Materia> materias = new ArrayList<>();
         String sql = "SELECT * FROM materia WHERE estado = 1 AND idMateria not in"

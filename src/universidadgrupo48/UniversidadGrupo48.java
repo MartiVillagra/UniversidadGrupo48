@@ -16,59 +16,84 @@ import universidadgrupo48.Entidades.Materia;
 public class UniversidadGrupo48 {
 
     public static void main(String[] args) {
- //       Connection con = Conexion.getConexion();    
-       // Alumno juan = new Alumno(38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
-        //AlumnoData alu = new AlumnoData();
-        //alu.guardarAlumno(juan);
-        //alu.modificaAlumno(juan);
-       // alu.eliminarAlumno(3);
-      // Alumno alumnoEncontrado =alu.buscarPorDNI(38439684);
-      
-        /*if(alumnoEncontrado!=null){
+ //       Connection con = Conexion.getConexion(); 
+ 
+//*************************Guardar alumno*********************
+/*
+        Alumno juan = new Alumno(38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
+        AlumnoData alu = new AlumnoData();
+        alu.guardarAlumno(juan);
+*/
+//**************************Modificar alumno************************
+/*
+        Alumno juan = new Alumno(38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
+        AlumnoData alu = new AlumnoData();
+        alu.modificaAlumno(juan);
+*/
+//************************Eliminar alumno**************************
+/*
+        Alumno juan = new Alumno(38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
+        AlumnoData alu = new AlumnoData();
+        alu.eliminarAlumno(3);
+*/
+//*************************Buscar alumno por dni**************************
+/*
+        AlumnoData alu = new AlumnoData();
+        Alumno alumnoEncontrado =alu.buscarPorDNI(38439684);
+        if(alumnoEncontrado!=null){
              System.out.println(alumnoEncontrado.toString());
         }
         else{
             JOptionPane.showMessageDialog(null,"alumno no encontrado");
-        }*/
-
-      /*AlumnoData alu =new AlumnoData();
+        }
+*/
+// ******************************Listar alumnos***********************
+/*
+        AlumnoData alu =new AlumnoData();
         for (Alumno alumno : alu.listarAlumno()) {
             System.out.println(alumno.toString());
-        }*/
-//************************guardar materia************************      
-//        Materia lengua = new Materia("base de datos",1,true);    
-//        MateriaData data1 = new MateriaData();
-//        data1.guardarMateria(lengua);
+        }
+*/
+//************************guardar materia************************
+/*
+        Materia lengua = new Materia("base de datos",1,true);    
+        MateriaData data1 = new MateriaData();
+        data1.guardarMateria(lengua);
+*/
  //*********************buscar por materia ]***************  
-//      MateriaData data1 = new MateriaData();
-//      Materia materiaEncontrada = data1.buscarMateriaPorID(1);
-//      if (materiaEncontrada != null){
-//          System.out.println(materiaEncontrada.toString());
-//      }
+/*
+      MateriaData data1 = new MateriaData();
+      Materia materiaEncontrada = data1.buscarMateriaPorID(1);
+      if (materiaEncontrada != null){
+          System.out.println(materiaEncontrada.toString());
+      }
+*/
 //*******************Modificar materia ***********************
- //      Materia lengua = new Materia("base de datos",1,true); 
-//       Matria(1,"matematica",2,true);
-//       MateriaData data= new MateriaData();
-//       data.modificarMateria(leng);
-
+/*
+       Materia lengua = new Materia("base de datos",1,true); 
+       Matria(1,"matematica",2,true);
+       MateriaData data= new MateriaData();
+       data.modificarMateria(leng);
+*/
 //*******************eliminar amteria***********************
-
-//        MateriaData data= new MateriaData();
-//        data.eliminarMateria(3);
-
+/*
+        MateriaData data= new MateriaData();
+        data.eliminarMateria(3);
+*/
 //******************listar materia***************************
-
-//      for (Materia materia : data.listarMateria()){
-//         System.out.println(materia.toString()); 
-//      }
+/*
+      for (Materia materia : data.listarMateria()){
+         System.out.println(materia.toString()); 
+      }
+*/
 //********************inscripcion guardar iscripcion*************************
-//     
-//     Alumno juan = new Alumno(1,38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
-//     Materia lengua = new Materia(1,"base de datos",1,true)
-//     InscripcionData insData= new InscripcionData();
-//     Inscripcion insc =new Inscripcion(juan, lengua, 7);
-//     insData.guardarInscripcion(insc);
-
+/*     
+     Alumno juan = new Alumno(1,38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
+     Materia lengua = new Materia(1,"base de datos",1,true)
+     InscripcionData insData= new InscripcionData();
+     Inscripcion insc =new Inscripcion(juan, lengua, 7);
+     insData.guardarInscripcion(insc);
+*/
 //***************obtener inscripcion***************
  /*       InscripcionData insData= new InscripcionData();
         for (Inscripcion inscripcion : insData.obtenerInscripciones()) {
@@ -111,25 +136,24 @@ public class UniversidadGrupo48 {
         }
  */
 //********************* Eliminar inscripcion  idMateria y por idAlumno*****
-
+/*
         MateriaData data= new MateriaData(); 
         AlumnoData alu = new AlumnoData();  
         InscripcionData ins = new InscripcionData();
         data.buscarMateriaPorID(8);
         alu.buscarPorID(3);
-        ins.actualizarNota(3, 8, 7);
-       
-       
+        ins.actualizarNota(3, 8, 7);       
+ */      
 //********************* Cambiar nota por  idMateria y por idAlumno*****
-
-//        MateriaData data= new MateriaData();//  data.buscarMateriaPorID(8);
-//        AlumnoData alu = new AlumnoData();//  alu.buscarPorID(3);
-//        InscripcionData ins = new InscripcionData();
-//        Alumno cris=alu.buscarPorID(3);
-//        Materia ingl=data.buscarMateriaPorID(8);
-//        Inscripcion inscrip = new Inscripcion(cris,ingl, 10);
-//        ins.actualizarNota(3, 8, 9);     
-
+/*
+        MateriaData data= new MateriaData();//  data.buscarMateriaPorID(8);
+        AlumnoData alu = new AlumnoData();//  alu.buscarPorID(3);
+        InscripcionData ins = new InscripcionData();
+        Alumno cris=alu.buscarPorID(3);
+        Materia ingl=data.buscarMateriaPorID(8);
+        Inscripcion inscrip = new Inscripcion(cris,ingl, 10);
+        ins.actualizarNota(3, 8, 9);     
+*/
 
 
         
