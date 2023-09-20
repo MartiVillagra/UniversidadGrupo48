@@ -45,17 +45,22 @@ public class UniversidadGrupo48 {
 //      if (materiaEncontrada != null){
 //          System.out.println(materiaEncontrada.toString());
 //      }
+//*******************Modificar materia ***********************
+//       Matria(1,"matematica",2,true);
+//       MateriaData data= new MateriaData();
+//       data.modificarMateria(leng);
 
-////        Matria(1,"matematica",2,true);
-//          MateriaData data= new MateriaData();
-////        data.modificarMateria(leng);
-//          // eliminar amteria
-//          //data.eliminarMateria(3);
-//          //listar materia
-//          for (Materia materia : data.listarMateria()){
-//              System.out.println(materia.toString()); 
-     //*********************************************
-     // inscripcion guardar iscripcion
+//*******************eliminar amteria***********************
+
+//        MateriaData data= new MateriaData();
+//        data.eliminarMateria(3);
+
+//******************listar materia***************************
+
+//      for (Materia materia : data.listarMateria()){
+//         System.out.println(materia.toString()); 
+//      }
+//********************inscripcion guardar iscripcion*************************
 //     
 //     Alumno juan = new Alumno(1,38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
 //     Materia lengua = new Materia(1,"base de datos",1,true)
@@ -89,7 +94,7 @@ public class UniversidadGrupo48 {
  //**************************Obtener  materias cursadas*********************************************
  /*     
         InscripcionData insData= new InscripcionData();
-        for (Materia materia : insData.obtenerMateriasCursadas(7)){
+        for (Materia materia : insData.obtenerMateriasCursadas(3)){
             System.out.println("idMateria " + materia.getIdMateria());
             System.out.println("Nombre " + materia.getNombre());
             System.out.println("Año " + materia.getAnioMateria());
@@ -104,6 +109,11 @@ public class UniversidadGrupo48 {
             System.out.println("Año " + materia.getAnioMateria());
         }
  */
+ //************************** Eliminar inscripcion  idMateria y por idAlumno
+//        MateriaData data= new MateriaData();
+//        data.eliminarMateria(8);
+//        AlumnoData alu = new AlumnoData();
+//        alu.eliminarAlumno(3);
     }         
 }  
     
