@@ -13,8 +13,7 @@ public class AlumnoData {
     
     public AlumnoData (){
      con=Conexion.conectar();   
-    }
-    
+    }    
     public void guardarAlumno(Alumno alumno){
         String sql="INSERT INTO alumno (dni, apellido, nombre, fechaNacimiento, estado)"
                 + "VALUES (?,?,?,?,?)";
@@ -35,8 +34,7 @@ public class AlumnoData {
             ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "ERROR ALUMNO");
-        }
-        
+        }   
     }
     public void modificaAlumno(Alumno alumno){
         
@@ -56,7 +54,6 @@ public class AlumnoData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "error no se pudo modificar el alumno");
         }
-        
     }
     
     public void eliminarAlumno (int id){
@@ -66,17 +63,11 @@ public class AlumnoData {
             ps.setInt(1, id);
             int exito =ps.executeUpdate();
             if(exito==1){
-                 JOptionPane.showMessageDialog(null,"alumno dado de baja con exito");
-                
+                 JOptionPane.showMessageDialog(null,"alumno dado de baja con exito");        
             }
-            
-      
-        } catch (SQLException ex) {
-           
+        } catch (SQLException ex) {   
             JOptionPane.showMessageDialog(null, "alumno eliminado ");
         }
-       
-    
     }
     public Alumno buscarPorID(int id){
       
@@ -97,20 +88,13 @@ public class AlumnoData {
                 alumno.setEstado(true);
             
             }else {
-                JOptionPane.showMessageDialog(null,"alumno no encontrado" );
+                JOptionPane.showMessageDialog(null,"alumno  encontrado" );
             }
-                ps.close();
-            
+                ps.close();    
         } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "alumno encontrado");
+           JOptionPane.showMessageDialog(null, "alumno no encontrado");
         }
-        
-        return alumno;
-        
-        
-        
-        
-        
+        return alumno;  
     }  
        public Alumno buscarPorDNI(int dni){
       
@@ -131,20 +115,13 @@ public class AlumnoData {
                 alumno.setEstado(true);
             
             }else {
-                JOptionPane.showMessageDialog(null,"alumno no encontrado" );
+                JOptionPane.showMessageDialog(null,"alumno  encontrado" );
             }
-                ps.close();
-            
+            ps.close();    
         } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "alumno encontrado");
+           JOptionPane.showMessageDialog(null, "alumno no encontrado");
         }
-        
-        return alumno;
-        
-        
-        
-        
-        
+        return alumno;   
     } 
        public ArrayList <Alumno> listarAlumno(){
       
@@ -164,22 +141,15 @@ public class AlumnoData {
                 alumno.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
                 alumno.setEstado(true);
             
-        alumnos.add(alumno);
+            alumnos.add(alumno);
             }
-                ps.close();
-            
+            ps.close();       
         } catch (SQLException ex) {
            JOptionPane.showMessageDialog(null, "error  no hay alumnos ");
-        }
-        
-        return alumnos;
-        
-        
-        
-        
-        
+        }  
+        return alumnos;        
     } 
-       public void prueva(){
+       public void prueba(){
            
        }
 }

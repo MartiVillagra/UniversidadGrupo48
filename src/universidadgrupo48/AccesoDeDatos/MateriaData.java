@@ -50,15 +50,12 @@ public class MateriaData {
     
     public Materia buscarMateriaPorID(int id){
     
-    String sql = "SELECT nombre, anio, estado FROM materia WHERE idMateria = ? ";
-        
+        String sql = "SELECT nombre, anio, estado FROM materia WHERE idMateria = ? ";
         Materia materia = null;
     
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            
             ps.setInt(1, id);
-            
             ResultSet rs = ps.executeQuery();
             
             if(rs.next()){
@@ -68,15 +65,13 @@ public class MateriaData {
             materia.setAnioMateria(rs.getInt("anio"));
             materia.setActivo(true);
             } else {
-            JOptionPane.showMessageDialog(null, "Materia no encontrada.");
+            JOptionPane.showMessageDialog(null, "Materia encontrada.");
             }
-            ps.close();
-            
+            ps.close();    
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al conectar con la tabla Materia.");
         }
-        return materia;
-        
+        return materia;   
     }
     
     public void modificarMateria(Materia materia){
@@ -112,7 +107,7 @@ public class MateriaData {
         } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Materia no encontrada");
         }
-        }
+    }
       public ArrayList<Materia> listarMateria(){
          String sql=" SELECT idMateria,nombre,anio FROM materia WHERE estado=1";
          ArrayList<Materia> materias= new ArrayList();

@@ -56,22 +56,26 @@ public class UniversidadGrupo48 {
 //              System.out.println(materia.toString()); 
      //*********************************************
      // inscripcion guardar iscripcion
-     
-     Alumno juan = new Alumno(1,38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
-     Materia lengua = new Materia(1,"base de datos",1,true);
-     
-     InscripcionData insData= new InscripcionData();
+//     
+//     Alumno juan = new Alumno(1,38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
+//     Materia lengua = new Materia(1,"base de datos",1,true)
+//     InscripcionData insData= new InscripcionData();
 //     Inscripcion insc =new Inscripcion(juan, lengua, 7);
 //     insData.guardarInscripcion(insc);
 
-       /* for (Inscripcion inscripcion : insData.obtenerInscripciones()) {
+//***************obtener inscripcion***************
+ /*       InscripcionData insData= new InscripcionData();
+        for (Inscripcion inscripcion : insData.obtenerInscripciones()) {
             System.out.print("idInscripcion: "+inscripcion.getIdInscripcion());
             System.out.print(" Nota: "+inscripcion.getNota());
             System.out.print(" idAlumno: "+inscripcion.getAlumno().getIdAlumno());
             System.out.print(" idMateria: "+inscripcion.getMateria().getIdMateria());
             System.out.println("");
-        }*/
-     /*for (Inscripcion inscripcion : insData.obtenerInscripcionesPorAlumno(1)){
+        }
+ */
+ //*************** obtener inscripcion por alumno ******************
+ /*       InscripcionData insData= new InscripcionData();   
+       for (Inscripcion inscripcion : insData.obtenerInscripcionesPorAlumno(1)){
          
          System.out.println(" idInscripcion " + inscripcion.getIdInscripcion());
          System.out.println(" idAlumno "  + inscripcion.getAlumno().getIdAlumno());
@@ -82,22 +86,24 @@ public class UniversidadGrupo48 {
          System.out.println("--------------------------------------------------------");
      }
 */
-     for (Materia materia : insData.obtenerMateriasCursadas(1)){
-         System.out.println("idMateria " + materia.getIdMateria());
-         System.out.println("Nombre " + materia.getNombre());
-         System.out.println("Año " + materia.getAnioMateria());
-     
-     
-     }
+ //**************************Obtener  materias cursadas*********************************************
+ /*     
+        InscripcionData insData= new InscripcionData();
+        for (Materia materia : insData.obtenerMateriasCursadas(7)){
+            System.out.println("idMateria " + materia.getIdMateria());
+            System.out.println("Nombre " + materia.getNombre());
+            System.out.println("Año " + materia.getAnioMateria());
+        }
+ */
+// //**************************Obtener  materias no cursadas*********************************************
+ /*    
+        InscripcionData insData= new InscripcionData();
+        for (Materia materia : insData.obtenerMateriaNoCursada(1)){
+            System.out.println("idMateria " + materia.getIdMateria());
+            System.out.println("Nombre " + materia.getNombre());
+            System.out.println("Año " + materia.getAnioMateria());
+        }
+ */
+    }         
+}  
     
-    
-    }
-          
-    }
-      
-      
-    
-    
-
-        
-       

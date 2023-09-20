@@ -26,7 +26,7 @@ public class InscripcionData {
         matData = new MateriaData();
 
     }
-
+    //************** Resive un dato inscripcion y lo guarda en la tabla incripcion
     public void guardarInscripcion(Inscripcion insc) {
         String sql = " INSERT  INTO inscripcion (nota,idAlumno,idMateria)VALUES (?,?,?) ";
         try {
@@ -45,7 +45,7 @@ public class InscripcionData {
             JOptionPane.showMessageDialog(null, "Error en la inscripcion");
         }
     }
-
+//*************************** Nos devuelve una lista con todas lass incripciones
     public ArrayList<Inscripcion> obtenerInscripciones() {
         String sql = "SELECT * FROM inscripcion ";
 
@@ -70,7 +70,7 @@ public class InscripcionData {
         return inscripciones;
 
     }
-
+// ********** se pasa el idAlumno y se reciven todas las inscripciones del alumno
     public ArrayList<Inscripcion> obtenerInscripcionesPorAlumno(int id) {
         String sql = "SELECT ins.idAlumno,ins.idMateria,idInscripcion, ma.nombre as materia,apellido,alu.nombre FROM inscripcion ins JOIN materia ma"
                 + ",alumno alu  WHERE ins.idAlumno=? AND ins.idAlumno = alu.idAlumno AND ins.idMateria = ma.idMateria ";
@@ -81,7 +81,6 @@ public class InscripcionData {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-
                 Inscripcion insc = new Inscripcion();
                 insc.setIdInscripcion(rs.getInt("idInscripcion"));
                 Alumno alu = aluData.buscarPorID(rs.getInt("idAlumno"));
@@ -90,72 +89,68 @@ public class InscripcionData {
                 insc.setMateria(mat);
                 alu.setNombre(rs.getString("nombre"));
                 alu.setApellido(rs.getString("apellido"));
-                mat.setNombre(rs.getString("materia"));
-               
-                inscripciones.add(insc);
-
+                mat.setNombre(rs.getString("materia"));               
+            inscripciones.add(insc);
             }
             rs.close();
-
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "no se pudo acceder a la tabla inscripcion");
         }
-        return inscripciones;
-
+     return inscripciones;
     }
-
+//********************Paso idAlumnono y muestro materia que esta cuersando(solo materias)
     public ArrayList<Materia> obtenerMateriasCursadas(int id) {
-        String sql= "SELECT ins.idMateria, nombre, anio FROM inscripcion ins, materia ma,"
-                + "WHERE ins.idMateria = ma.idMateria AND ins.idAlumno = ?";
-        ArrayList <Materia>materias = new ArrayList();
+        ArrayList <Materia> materias = new ArrayList<>();
+        String sql = "SELECT * FROM materia WHERE estado = 1 AND idMateria in"
+                + "(SELECT idMateria FROM inscripcion WHERE idAlumno = ?)";
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setInt(1, id);
-            System.out.println("-1");
-            ResultSet rs = ps.executeQuery();    
-            System.out.println("0");
-            
-            Materia materia;
+            ResultSet rs = ps.executeQuery(); 
             
             while(rs.next()){
-                
-                materia = new Materia();
-                
-                System.out.println("1");
-                
-                
-                System.out.println("2");
+                Materia materia = new Materia();
                 materia.setIdMateria(rs.getInt("idMateria"));
                 materia.setNombre(rs.getString("nombre"));
                 materia.setAnioMateria(rs.getInt("anio"));
-                
-              materias.add(materia);
-              
-                
-                
+            materias.add(materia);  
             }
-            ps.close();
-            
+            ps.close();    
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "no se encontraron datos ");
         }
-        
-
         return materias;
-
     }
-
+ 
+///******************Paso idAlumnono y muestro materia que no esta inscripto(usar el gestor)
     public ArrayList<Materia> obtenerMateriaNoCursada(int id) {
-
-        return null;
-
+        ArrayList<Materia> materias = new ArrayList<>();
+        String sql = "SELECT * FROM materia WHERE estado = 1 AND idMateria not in"
+                + "(SELECT idMateria FROM inscripcion WHERE idAlumno = ?)";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Materia materia = new Materia();
+                materia.setIdMateria(rs.getInt("idMateria"));
+                materia.setNombre(rs.getString("nombre"));
+                materia.setAnioMateria(rs.getInt("anio"));
+            materias.add(materia);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "No se ha podido conectar con la tabla materia" + ex);
+        }
+        return materias;
     }
-
+//*********** se pasa el alumno y la materia en que esta borra la inscripcion o idInscripcion
     public void borrarInscripcionMateriaAlumno(int idAlumno, int idMateria) {
         
 
     }
-
+//************* recibe el idAlumno e idMatria  y la nota que modifica
     public void actualizarNota(int idAlumno, int idMateria, double nota) {
 
     }
