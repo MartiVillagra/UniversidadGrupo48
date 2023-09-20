@@ -166,29 +166,20 @@ public class InscripcionData {
         }
     }    
 
-//*********** se pasa el alumno y la materia en que esta borra la inscripcion o idInscripcion
+//*********** se pasa el alumno y la materia. Y se borra la inscripcion o idInscripcion
     public void borrarInscripcionMateriaAlumno(int idAlumno, int idMateria) {      
-//        String sql = "UPDATE ins.alumno,ins.materia,idInscripcion FROM incripcion ins "
-//                             + " WHERE idAlumno=?and ins.materia=? SET ins.estado=0";
-//        try {
-//            PreparedStatement ps = con.prepareStatement(sql);
-//            ps.setInt(idMateria, idAlumno);
-//            int exito =ps.executeUpdate();
-//            if(exito==1){
-//                JOptionPane.showMessageDialog(null,"Iscripcion eliminada");        
-//            }
-        String sql = "UPDATE inscripcion set estado=0 WHERE idAlumno=?and ins.materia=?";
+
+        String sql = "DELETE  FROM inscripcion  WHERE idAlumno=? and idMateria=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setBoolean(1, false);
-            ps.setInt(2, idAlumno);
-            ps.setInt(3, idMateria);
+            ps.setInt(1, idAlumno);
+            ps.setInt(2, idMateria);
             int exito =ps.executeUpdate();
                 if(exito==1){
-                    JOptionPane.showMessageDialog(null,"Iscripcion eliminada");        
+                JOptionPane.showMessageDialog(null,"Iscripcion eliminada");        
             }
         } catch (SQLException ex) {   
-                    JOptionPane.showMessageDialog(null, "no se pudo eliminar la iscripcion ");
+                JOptionPane.showMessageDialog(null, "no se pudo eliminar la iscripcion ");
         }
     }
 

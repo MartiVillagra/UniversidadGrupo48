@@ -146,17 +146,14 @@ public class UniversidadGrupo48 {
  */      
 //********************* Cambiar nota por  idMateria y por idAlumno*****
 /*
-        MateriaData data= new MateriaData();//  data.buscarMateriaPorID(8);
-        AlumnoData alu = new AlumnoData();//  alu.buscarPorID(3);
+        MateriaData data= new MateriaData();
+        AlumnoData alu = new AlumnoData(); 
         InscripcionData ins = new InscripcionData();
-        Alumno cris=alu.buscarPorID(3);
-        Materia ingl=data.buscarMateriaPorID(8);
-        Inscripcion inscrip = new Inscripcion(cris,ingl, 10);
-        ins.actualizarNota(3, 8, 9);     
+        
+        ins.borrarInscripcionMateriaAlumno(1, 1);     
 */
 
-
-        
+//*********************Obtiene Alumnos por Materia*****  
     }         
 }  
     
