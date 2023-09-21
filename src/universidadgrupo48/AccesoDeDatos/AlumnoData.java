@@ -115,7 +115,7 @@ public class AlumnoData {
                 alumno.setEstado(true);
             
             }else {
-                JOptionPane.showMessageDialog(null,"alumno  encontrado" );
+                JOptionPane.showMessageDialog(null,"alumno no encontrado" );
             }
             ps.close();    
         } catch (SQLException ex) {

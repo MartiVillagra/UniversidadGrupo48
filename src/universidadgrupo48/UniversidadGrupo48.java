@@ -165,11 +165,11 @@ public class UniversidadGrupo48 {
          System.out.println("--------------------------------------------------------");
         }
 */
-        // crea la interfaz grafica
-        Menu menuVistas= new Menu();
-        // para hacerla visible
-        menuVistas.setVisible(true);
-        menuVistas.setLocationRelativeTo(null);
+//        // crea la interfaz grafica
+//        Menu menuVistas= new Menu();
+//        // para hacerla visible
+//        menuVistas.setVisible(true);
+//        menuVistas.setLocationRelativeTo(null);
    }              
 }  
     
