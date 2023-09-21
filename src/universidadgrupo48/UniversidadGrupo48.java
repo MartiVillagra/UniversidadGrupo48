@@ -12,6 +12,7 @@ import universidadgrupo48.AccesoDeDatos.MateriaData;
 import universidadgrupo48.Entidades.Alumno;
 import universidadgrupo48.Entidades.Inscripcion;
 import universidadgrupo48.Entidades.Materia;
+import universidadgrupo48.Vistas.Menu;
 
 public class UniversidadGrupo48 {
 
@@ -153,7 +154,7 @@ public class UniversidadGrupo48 {
         ins.borrarInscripcionMateriaAlumno(1, 1);     
 */
 //*********************Obtiene Alumnos por Materia*****  
-        
+ /*       
     InscripcionData ins = new InscripcionData();    
     for (Alumno alumno: ins.obtenerAlumnosXMateria(2)){
 
@@ -162,6 +163,12 @@ public class UniversidadGrupo48 {
          System.out.println(" nombre alumno "  + alumno.getNombre());
          System.out.println("--------------------------------------------------------");
         }
+*/
+        // crea la interfaz grafica
+        Menu menuVistas= new Menu();
+        // para hacerla visible
+        menuVistas.setVisible(true);
+        menuVistas.setLocationRelativeTo(null);
    }              
 }  
     
