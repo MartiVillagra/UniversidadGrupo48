@@ -72,6 +72,11 @@ public class FormularioDeMateria extends javax.swing.JInternalFrame {
 
         jBnuevo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBnuevo.setText("Nuevo");
+        jBnuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBnuevoActionPerformed(evt);
+            }
+        });
 
         jBeliminar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBeliminar.setText("Eliminar");
@@ -173,6 +178,15 @@ public class FormularioDeMateria extends javax.swing.JInternalFrame {
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
         setVisible(false);
     }//GEN-LAST:event_jBsalirActionPerformed
+
+    private void jBnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnuevoActionPerformed
+         // limpia los campos
+        
+        jTcodigo.setText("");
+        jTnombreMateria.setText("");
+        jTanio.setText("");
+       // jRBestado.setAction(null);
+    }//GEN-LAST:event_jBnuevoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
