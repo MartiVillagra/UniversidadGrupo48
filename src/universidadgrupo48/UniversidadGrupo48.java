@@ -130,28 +130,29 @@ public class UniversidadGrupo48 {
  //**************************Obtener  materias no cursadas*********************************************
  /*    
         InscripcionData insData= new InscripcionData();
-        for (Materia materia : insData.obtenerMateriaNoCursada(1)){
+        for (Materia materia : insData.obtenerMateriaNoCursada(3)){
             System.out.println("idMateria " + materia.getIdMateria());
             System.out.println("Nombre " + materia.getNombre());
             System.out.println("Año " + materia.getAnioMateria());
         }
- */
-//********************* Eliminar inscripcion  idMateria y por idAlumno*****
+*/
+//********************* Cambiar nota por  idMateria y por idAlumno*****
 /*
         MateriaData data= new MateriaData(); 
         AlumnoData alu = new AlumnoData();  
         InscripcionData ins = new InscripcionData();
         data.buscarMateriaPorID(8);
         alu.buscarPorID(3);
-        ins.actualizarNota(3, 8, 7);       
+        ins.actualizarNota(3, 6, 10);       
  */      
-//********************* Cambiar nota por  idMateria y por idAlumno*****
+
+//********************* Eliminar inscripcion  idMateria y por idAlumno*****
 /*
         MateriaData data= new MateriaData();
         AlumnoData alu = new AlumnoData(); 
         InscripcionData ins = new InscripcionData();
         
-        ins.borrarInscripcionMateriaAlumno(1, 1);     
+        ins.borrarInscripcionMateriaAlumno(7, 9);     
 */
 //*********************Obtiene Alumnos por Materia*****  
  /*       
