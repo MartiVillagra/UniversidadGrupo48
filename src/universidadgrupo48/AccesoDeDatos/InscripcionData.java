@@ -184,35 +184,28 @@ public class InscripcionData {
     }
 
     public ArrayList<Alumno> obtenerAlumnosXMateria(int idMateria) {
-        
+        //materias por alumno
+    /*SELECT anio, ma.nombre as materia, dni, apellido, alu.nombre FROM materia ma ,alumno alu, 
+    inscripcion ins WHERE ins.idMateria =ma.idMateria and ins.idAlumno=alu.idAlumno AND ins.idAlumno=3  */  
         ArrayList <Alumno> materiaAlumnos = new ArrayList();
         
-//         String sql ="SELECT idAlumno,dni,apellido,alu.nombre, mat.nombre as materia, anio "
-//                 + "FROM alumno alu , materia mat WHERE mat.estado=? AND idMateria=?";
-        String  sql ="SELECT ins.idAlumno,dni,apellido,alu.nombre, mat.nombre as materia, anio "
-                 + "FROM alumno alu , materia mat, incripcion ins WHERE ins.idAlumno=alu.idAlumno"
-                 + "AND ins.idMateria=? and alu.estado=1";
-                 
+    String  sql ="SELECT anio, ma.nombre as materia, dni, apellido, alu.nombre "
+            + "FROM materia ma ,alumno alu, inscripcion ins WHERE ins.idMateria = ma.idMateria "
+            + "and ins.idAlumno=alu.idAlumno AND ins.idMateria=?;";         
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setInt(1, idMateria);
-            
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-               Alumno alumno = new Alumno();
-              // Materia materia= new Materia();
-                alumno.setIdAlumno(rs.getInt("idAlumno"));
+                Alumno alumno = new Alumno();
                 alumno.setDni(rs.getInt("dni"));
                 alumno.setApellido(rs.getString("apellido"));
-                alumno.setNombre(rs.getString("nombre"));  
-                alumno.setEstado(rs.getBoolean("estado"));  
-//                materia.setIdMateria(rs.getInt("idMateria"));
-//                materia.setNombre(rs.getString("nombre")); 
-               materiaAlumnos.add(alumno);
+                alumno.setNombre(rs.getString("nombre"));    
+            materiaAlumnos.add(alumno);
             }
             ps.close();     
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Listado de alumnos ");
+            JOptionPane.showMessageDialog(null, "Erroa al procesar el listado de alumnos ");
         }  
         return materiaAlumnos;        
     }

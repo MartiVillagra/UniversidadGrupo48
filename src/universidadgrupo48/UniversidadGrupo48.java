@@ -152,23 +152,16 @@ public class UniversidadGrupo48 {
         
         ins.borrarInscripcionMateriaAlumno(1, 1);     
 */
-
 //*********************Obtiene Alumnos por Materia*****  
         
-        InscripcionData ins = new InscripcionData();
-        
-//        for (Materia materia: ins.obtenerAlumnosXMateria(5)){
-//            System.out.println("nombre"+materia.getNombre());
-//System.out.println(" nombre materia " + inscripcion.getMateria().getNombre());
-//        }
-    for (Alumno alumno: ins.obtenerAlumnosXMateria(5)){
+    InscripcionData ins = new InscripcionData();    
+    for (Alumno alumno: ins.obtenerAlumnosXMateria(2)){
 
-         System.out.println(" idAlumno "  + alumno.getIdAlumno());
          System.out.println(" dni " + alumno.getDni());
          System.out.println(" apellido alumno "  + alumno.getApellido());
          System.out.println(" nombre alumno "  + alumno.getNombre());
          System.out.println("--------------------------------------------------------");
         }
-    }         
+   }              
 }  
     
