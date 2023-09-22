@@ -71,10 +71,10 @@
                                       <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTNombre" min="-2" pref="291" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jTNombre" pref="291" max="32767" attributes="0"/>
                                       <Component id="jREstado" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jDFechaNac" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jDFechaNac" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>

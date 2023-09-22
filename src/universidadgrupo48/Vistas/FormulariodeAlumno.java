@@ -7,6 +7,7 @@ package universidadgrupo48.Vistas;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import static java.time.temporal.TemporalQueries.localDate;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.Action;
@@ -146,10 +147,10 @@ public class FormulariodeAlumno extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel6))
                                 .addGap(67, 67, 67)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
                                     .addComponent(jREstado)
-                                    .addComponent(jDFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(jDFechaNac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -245,7 +246,8 @@ public class FormulariodeAlumno extends javax.swing.JInternalFrame {
         if(aluData.buscarPorDNI(dni)!=null){
          jTNombre.setText(aluData.buscarPorDNI(dni).getNombre());   
          jTApellido.setText(aluData.buscarPorDNI(dni).getApellido());
-         //FALTA FECHA JDFechaNac
+         Date date = Date.from(aluData.buscarPorDNI(dni).getFechaNac().atStartOfDay(ZoneId.systemDefault()).toInstant());
+         jDFechaNac.setDate(date);
          jREstado.setSelected(true);
         }
         
