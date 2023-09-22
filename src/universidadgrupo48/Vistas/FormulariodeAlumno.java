@@ -51,8 +51,8 @@ public class FormulariodeAlumno extends javax.swing.JInternalFrame {
         jbGuardar = new javax.swing.JButton();
         jbEliminar = new javax.swing.JButton();
         jREstado = new javax.swing.JRadioButton();
-        jDFechaNac = new com.toedter.calendar.JDateChooser();
         jBuscar = new javax.swing.JButton();
+        jDFechaNac = new com.toedter.calendar.JDateChooser();
 
         setClosable(true);
 
@@ -149,7 +149,7 @@ public class FormulariodeAlumno extends javax.swing.JInternalFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jREstado)
-                                    .addComponent(jDFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(jDFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -187,7 +187,7 @@ public class FormulariodeAlumno extends javax.swing.JInternalFrame {
                     .addComponent(jLabel5)
                     .addComponent(jREstado))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jDFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)

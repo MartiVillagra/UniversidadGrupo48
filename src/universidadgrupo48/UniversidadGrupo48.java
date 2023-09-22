@@ -72,9 +72,9 @@ public class UniversidadGrupo48 {
 //*******************Modificar materia ***********************
 /*
        Materia lengua = new Materia("base de datos",1,true); 
-       Matria(1,"matematica",2,true);
+      // Materia(1,"matematica",2,true); se carga el id
        MateriaData data= new MateriaData();
-       data.modificarMateria(leng);
+       data.modificarMateria(lengua);
 */
 //*******************eliminar amteria***********************
 /*
@@ -83,20 +83,22 @@ public class UniversidadGrupo48 {
 */
 //******************listar materia***************************
 /*
-      for (Materia materia : data.listarMateria()){
-         System.out.println(materia.toString()); 
-      }
+        MateriaData data= new MateriaData();
+        for (Materia materia : data.listarMateria()){
+            System.out.println(materia.toString()); 
+        }
 */
 //********************inscripcion guardar iscripcion*************************
 /*     
      Alumno juan = new Alumno(1,38439123,"flores"," cristina ",LocalDate.of(2021, Month.MARCH, 3),true);
-     Materia lengua = new Materia(1,"base de datos",1,true)
+     Materia lengua = new Materia(1,"base de datos",1,true);
      InscripcionData insData= new InscripcionData();
      Inscripcion insc =new Inscripcion(juan, lengua, 7);
      insData.guardarInscripcion(insc);
 */
 //***************obtener inscripcion***************
- /*       InscripcionData insData= new InscripcionData();
+/*      
+        InscripcionData insData= new InscripcionData();
         for (Inscripcion inscripcion : insData.obtenerInscripciones()) {
             System.out.print("idInscripcion: "+inscripcion.getIdInscripcion());
             System.out.print(" Nota: "+inscripcion.getNota());
@@ -104,7 +106,7 @@ public class UniversidadGrupo48 {
             System.out.print(" idMateria: "+inscripcion.getMateria().getIdMateria());
             System.out.println("");
         }
- */
+*/
  //*************** obtener inscripcion por alumno ******************
  /*       InscripcionData insData= new InscripcionData();   
        for (Inscripcion inscripcion : insData.obtenerInscripcionesPorAlumno(1)){

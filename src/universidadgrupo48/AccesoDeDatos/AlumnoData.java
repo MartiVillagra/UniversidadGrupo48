@@ -36,6 +36,7 @@ public class AlumnoData {
             JOptionPane.showMessageDialog(null, "ERROR ALUMNO");
         }   
     }
+    
     public void modificaAlumno(Alumno alumno){
         
         String sql= "UPDATE alumno SET dni=?, apellido=?,nombre=? ,fechaNacimiento=? WHERE idAlumno =?  AND estado=1 ";
@@ -69,6 +70,7 @@ public class AlumnoData {
             JOptionPane.showMessageDialog(null, "alumno eliminado ");
         }
     }
+    
     public Alumno buscarPorID(int id){
       
         String sql ="SELECT dni,apellido,nombre,fechaNacimiento FROM alumno WHERE idAlumno=? AND estado= 1";
@@ -96,7 +98,8 @@ public class AlumnoData {
         }
         return alumno;  
     }  
-       public Alumno buscarPorDNI(int dni){
+    
+    public Alumno buscarPorDNI(int dni){
       
         String sql ="SELECT idalumno,apellido,nombre,fechaNacimiento FROM alumno WHERE dni=? AND estado= 1";
          Alumno alumno = null;
@@ -123,7 +126,8 @@ public class AlumnoData {
         }
         return alumno;   
     } 
-       public ArrayList <Alumno> listarAlumno(){
+    
+    public ArrayList <Alumno> listarAlumno(){
       
         String sql ="SELECT idAlumno,dni,apellido,nombre,fechaNacimiento FROM alumno WHERE   estado= 1";
         ArrayList <Alumno> alumnos = new ArrayList();

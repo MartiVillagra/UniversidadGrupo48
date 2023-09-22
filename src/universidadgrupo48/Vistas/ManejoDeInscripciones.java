@@ -55,6 +55,18 @@ public class ManejoDeInscripciones extends javax.swing.JInternalFrame {
         jLabel3.setForeground(new java.awt.Color(0, 204, 204));
         jLabel3.setText("Listado de Materias");
 
+        jRBinscriptas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRBinscriptasActionPerformed(evt);
+            }
+        });
+
+        jRBnoInscriptas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRBnoInscriptasActionPerformed(evt);
+            }
+        });
+
         jTmateria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -164,6 +176,14 @@ public class ManejoDeInscripciones extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         setVisible(false);
     }//GEN-LAST:event_jBsalirActionPerformed
+
+    private void jRBinscriptasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBinscriptasActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_jRBinscriptasActionPerformed
+
+    private void jRBnoInscriptasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBnoInscriptasActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_jRBnoInscriptasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

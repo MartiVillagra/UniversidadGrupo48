@@ -27,7 +27,8 @@ public class InscripcionData {
         matData = new MateriaData();
        // inscData = new Inscripcion();
     }
-    //************** Resive un dato inscripcion y lo guarda en la tabla incripcion
+//************** Resive un dato inscripcion y lo guarda en la tabla incripcion
+    
     public void guardarInscripcion(Inscripcion insc) {
         String sql = " INSERT  INTO inscripcion (nota,idAlumno,idMateria)VALUES (?,?,?) ";
         try {
@@ -46,7 +47,9 @@ public class InscripcionData {
             JOptionPane.showMessageDialog(null, "Error en la inscripcion");
         }
     }
+    
 //*************************** Nos devuelve una lista con todas lass incripciones
+    
     public ArrayList<Inscripcion> obtenerInscripciones() {
         String sql = "SELECT * FROM inscripcion ";
 
@@ -71,7 +74,9 @@ public class InscripcionData {
         return inscripciones;
 
     }
+    
 // ********** se pasa el idAlumno y se reciven todas las inscripciones del alumno
+    
     public ArrayList<Inscripcion> obtenerInscripcionesPorAlumno(int id) {
         String sql = "SELECT ins.idAlumno,ins.idMateria,idInscripcion, ma.nombre as materia,apellido,alu.nombre FROM inscripcion ins JOIN materia ma"
                 + ",alumno alu  WHERE ins.idAlumno=? AND ins.idAlumno = alu.idAlumno AND ins.idMateria = ma.idMateria ";
@@ -99,7 +104,9 @@ public class InscripcionData {
         }
      return inscripciones;
     }
+    
 //********************Paso idAlumnono y muestro materia que esta cuersando(solo materias)
+    
     public ArrayList<Materia> obtenerMateriasCursadas(int id) {
         
         ArrayList <Materia> materias = new ArrayList<>();
