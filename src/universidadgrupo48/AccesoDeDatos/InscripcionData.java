@@ -51,8 +51,11 @@ public class InscripcionData {
 //*************************** Nos devuelve una lista con todas lass incripciones
     
     public ArrayList<Inscripcion> obtenerInscripciones() {
-        String sql = "SELECT * FROM inscripcion ";
-
+    /*  String sql = "SELECT * FROM inscripcion ";
+        Al utilizar esta consulta nos debuelve bien el resultado si tanto el estado de la materia como 
+        el estado del alumno estan en verdadero caso contrario tira error*/
+        String sql = "SELECT * FROM inscripcion ins,alumno alu,materia ma where ins.idMateria= ma.idMateria "
+                + "and ins.idAlumno= alu.idAlumno and ma.estado=1 and alu.estado=1";
         ArrayList<Inscripcion> inscripciones = new ArrayList();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
