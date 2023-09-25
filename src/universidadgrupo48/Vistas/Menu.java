@@ -106,6 +106,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu3.add(jMenuItem3);
 
         jMenuItem4.setText("Manipulacion de notas");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem4);
 
         jMenuBar1.add(jMenu3);
@@ -113,6 +118,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu4.setText("Consulta");
 
         jMenuItem5.setText("Alumnos por materia");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem5);
 
         jMenuBar1.add(jMenu4);
@@ -175,6 +185,27 @@ public class Menu extends javax.swing.JFrame {
         escritorio.moveToFront(mi);
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // Manipulacion de notas
+       
+        escritorio.removeAll();
+        escritorio.repaint();
+        ManipulacionDeNotas mi = new ManipulacionDeNotas();
+        mi.setVisible(true);
+        escritorio.add(mi);
+        escritorio.moveToFront(mi);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // alumnos x materia 
+        escritorio.removeAll();
+        escritorio.repaint();
+        AlumnosPorMateria mi = new AlumnosPorMateria();
+        mi.setVisible(true);
+        escritorio.add(mi);
+        escritorio.moveToFront(mi);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments

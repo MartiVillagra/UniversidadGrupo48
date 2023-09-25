@@ -1,6 +1,8 @@
 package universidadgrupo48.Vistas;
 
 import javax.swing.table.DefaultTableModel;
+import universidadgrupo48.AccesoDeDatos.AlumnoData;
+import universidadgrupo48.Entidades.Alumno;
 
 
 public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
@@ -17,6 +19,7 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
     public ManipulacionDeNotas() {
         initComponents();
         armarCabecera();
+        cargarComboBox();
     }
 
     /**
@@ -49,6 +52,12 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
         jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setText("Seleccione un alumno");
 
+        jCBalumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCBalumnoActionPerformed(evt);
+            }
+        });
+
         jTcargaDeNotas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -59,7 +68,15 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
             new String [] {
                 "Codigo", "Nombre", "Nota"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTcargaDeNotas);
 
         jBguardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -135,6 +152,13 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
         setVisible(false);
     }//GEN-LAST:event_jBsalirActionPerformed
 
+    private void jCBalumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBalumnoActionPerformed
+        //Cargo el jcb con el listado de alumnos
+        cargarComboBox();
+        
+       
+    }//GEN-LAST:event_jCBalumnoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBguardar;
@@ -154,6 +178,14 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
         modelo.addColumn("Nota");
     
         jTcargaDeNotas.setModel(modelo);
+    }
+    private void cargarComboBox(){
+        Alumno alum = new Alumno();     
+        AlumnoData alu = new AlumnoData();
+    
+        for(Alumno alumn : alu.listarAlumno()){
+            jCBalumno.addItem(alumn.toString());
+        }
     }
 
 }

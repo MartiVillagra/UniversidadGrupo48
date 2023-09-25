@@ -5,6 +5,9 @@
 package universidadgrupo48.Vistas;
 
 import javax.swing.table.DefaultTableModel;
+import universidadgrupo48.AccesoDeDatos.AlumnoData;
+import universidadgrupo48.AccesoDeDatos.MateriaData;
+import universidadgrupo48.Entidades.Alumno;
 import universidadgrupo48.Entidades.Materia;
 
 
@@ -21,7 +24,8 @@ public class AlumnosPorMateria extends javax.swing.JInternalFrame {
      */
     public AlumnosPorMateria() {
         initComponents();
-        armarCabecera();
+        armarCabecera();// carga la cabecera de la tabla
+        cargarComboBox();// carga listados de materias
     }
 
     /**
@@ -85,35 +89,36 @@ public class AlumnosPorMateria extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(jLabel2)
                         .addGap(36, 36, 36)
-                        .addComponent(jCBporMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                        .addComponent(jCBporMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(103, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jBsalir)
-                .addGap(35, 35, 35))
+                .addGap(27, 27, 27))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(34, 34, 34)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jCBporMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jBsalir)
-                .addGap(21, 21, 21))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -131,7 +136,7 @@ public class AlumnosPorMateria extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
-        // TODO add your handling code here:
+        // boton salir , se activa la salida cuando se presiona el boton
         setVisible(false);
     }//GEN-LAST:event_jBsalirActionPerformed
 
@@ -158,7 +163,15 @@ public class AlumnosPorMateria extends javax.swing.JInternalFrame {
         modelo.addColumn("Apellido");
         modelo.addColumn("Nombre");
         
-        jTporMateria.setModel(modelo);
+    jTporMateria.setModel(modelo);
     }
-
+    
+    private void cargarComboBox(){
+        
+        Materia mate = new Materia();     
+        MateriaData mat = new MateriaData();
+        for(Materia materia : mat.listarMateria()){
+            jCBporMateria.addItem(materia.toString());
+        }
+    }
 }
