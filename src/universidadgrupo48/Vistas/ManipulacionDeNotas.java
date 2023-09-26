@@ -59,6 +59,11 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
         jLabel2.setForeground(new java.awt.Color(0, 204, 204));
         jLabel2.setText("Seleccione un alumno");
 
+        jCBalumno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCBalumnoMouseClicked(evt);
+            }
+        });
         jCBalumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCBalumnoActionPerformed(evt);
@@ -168,20 +173,24 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
     private void jCBalumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBalumnoActionPerformed
         //Cargo el jcb con el listado de alumnos
        
-        cargarMateria();
+       cargarMateria();
        
     }//GEN-LAST:event_jCBalumnoActionPerformed
 
     private void jBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarActionPerformed
         // Guardar cambio de nota
-      
+         
     }//GEN-LAST:event_jBguardarActionPerformed
+
+    private void jCBalumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCBalumnoMouseClicked
+             
+    }//GEN-LAST:event_jCBalumnoMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBguardar;
     private javax.swing.JButton jBsalir;
-    private javax.swing.JComboBox<String> jCBalumno;
+    private javax.swing.JComboBox<Alumno> jCBalumno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -202,26 +211,29 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
         AlumnoData alu = new AlumnoData();
     
         for(Alumno alumn : alu.listarAlumno()){
-            jCBalumno.addItem(alumn.toString());
+            jCBalumno.addItem(alumn);
         }
     }
     private void cargarMateria(){
-        borrarFila();
+       // borrarFila();
         Alumno alu = (Alumno)jCBalumno.getSelectedItem();
         Materia mate = new Materia();
         InscripcionData inData = new InscripcionData();
         Inscripcion ins = new Inscripcion();
+        int id =alu.getIdAlumno();
         
-        for (Inscripcion inscri : inData.obtenerInscripciones() ){
+        
+        for (Materia materia : inData.obtenerMateriasCursadas(id) ){
+            modelo.addRow(new Object[]{materia.getIdMateria(),materia.getNombre(),
+                
+            
+      
+        
    
-            modelo.addRow(new Object[]{
-               
-                inscri.getIdInscripcion(), 
-                inscri.getMateria().getNombre(), 
-                inscri.getNota()
-            });
-            System.out.println("hola");
-        }
+          
+              
+            }
+            }
     }
     private void borrarFila(){
         int f=jTcargaDeNotas.getRowCount()-1;
