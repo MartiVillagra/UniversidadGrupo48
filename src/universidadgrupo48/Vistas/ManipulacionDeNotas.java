@@ -1,9 +1,13 @@
 package universidadgrupo48.Vistas;
 
 import javax.swing.table.DefaultTableModel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import universidadgrupo48.AccesoDeDatos.AlumnoData;
+import universidadgrupo48.AccesoDeDatos.InscripcionData;
 import universidadgrupo48.Entidades.Alumno;
-
+import universidadgrupo48.Entidades.Materia;
+import universidadgrupo48.Entidades.Inscripcion;
 
 public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
      private DefaultTableModel modelo = new DefaultTableModel(){
@@ -42,14 +46,15 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 204));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("Carga de Notas");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 204, 204));
         jLabel2.setText("Seleccione un alumno");
 
         jCBalumno.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +86,11 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
 
         jBguardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBguardar.setText("Guardar");
+        jBguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBguardarActionPerformed(evt);
+            }
+        });
 
         jBsalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBsalir.setText("Salir");
@@ -94,26 +104,27 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(jCBalumno, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(111, 111, 111)
                 .addComponent(jBguardar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBsalir)
-                .addGap(108, 108, 108))
+                .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(53, 53, 53)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel2)
-                        .addGap(40, 40, 40)
-                        .addComponent(jCBalumno, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                        .addGap(202, 202, 202)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,9 +135,9 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jCBalumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addGap(20, 20, 20)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jBguardar)
                     .addComponent(jBsalir))
@@ -158,6 +169,27 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
         
        
     }//GEN-LAST:event_jCBalumnoActionPerformed
+
+    private void jBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarActionPerformed
+        // Guardar cambio de nota
+        if(jCBalumno.isCursorSet()== true){
+            Alumno alu =(Alumno)jCBalumno.getSelectedItem();
+            Materia mate = new Materia();
+            InscripcionData inData = new InscripcionData();
+            Inscripcion ins = new Inscripcion();
+            
+            inData.actualizarNota(alu.getIdAlumno(), mate.getIdMateria(), ins.getNota());
+//            for (Inscripcion inscri : inData.actualizarNota(alu.getIdAlumno(), mate.getIdMateria(), ins.getNota())) {
+//                modelo.addRow(new Object[]{
+//                    inscri.getIdInscripcion(), 
+//                    inscri.getMateria(), 
+//                    inscri.getNota()
+//                });
+//                
+//            }
+            
+        }
+    }//GEN-LAST:event_jBguardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
