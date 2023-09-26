@@ -81,9 +81,10 @@ public class InscripcionData {
 // ********** se pasa el idAlumno y se reciven todas las inscripciones del alumno
     
     public ArrayList<Inscripcion> obtenerInscripcionesPorAlumno(int id) {
-        String sql = "SELECT ins.idAlumno,ins.idMateria,idInscripcion, ma.nombre as materia,apellido,alu.nombre FROM inscripcion ins JOIN materia ma"
+        String sql = "SELECT ins.idAlumno,nota,ins.idMateria,idInscripcion, ma.nombre as materia,apellido,alu.nombre, nota FROM inscripcion ins JOIN materia ma"
                 + ",alumno alu  WHERE ins.idAlumno=? AND ins.idAlumno = alu.idAlumno AND ins.idMateria = ma.idMateria ";
-        ArrayList<Inscripcion> inscripciones = new ArrayList();
+       
+ArrayList<Inscripcion> inscripciones = new ArrayList();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
@@ -94,6 +95,7 @@ public class InscripcionData {
                 insc.setIdInscripcion(rs.getInt("idInscripcion"));
                 Alumno alu = aluData.buscarPorID(rs.getInt("idAlumno"));
                 Materia mat = matData.buscarMateriaPorID(rs.getInt("idMateria"));
+                insc.setNota(rs.getDouble("nota"));
                 insc.setAlumno(alu);
                 insc.setMateria(mat);
                 alu.setNombre(rs.getString("nombre"));

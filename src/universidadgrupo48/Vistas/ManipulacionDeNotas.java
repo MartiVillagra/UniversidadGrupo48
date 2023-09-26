@@ -1,5 +1,6 @@
 package universidadgrupo48.Vistas;
 
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -14,7 +15,7 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
     
     public boolean isCellEditable(int f,int c){
     //si pongo false entonces las celdas no son editables
-        return false;  
+        return true;  
     }
      };            
     /**
@@ -126,11 +127,11 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(202, 202, 202)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -142,9 +143,9 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jCBalumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jBguardar)
                     .addComponent(jBsalir))
@@ -179,6 +180,29 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
 
     private void jBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarActionPerformed
         // Guardar cambio de nota
+         double nota=99.0;
+         int idMat=-1;
+         Alumno alu=(Alumno)jCBalumno.getSelectedItem();
+         int idAlu=alu.getIdAlumno();
+         try {
+             
+            nota=Double.parseDouble(jTcargaDeNotas.getValueAt(jTcargaDeNotas.getSelectedRow(), 2)+"");
+           idMat=Integer.parseInt(jTcargaDeNotas.getValueAt(jTcargaDeNotas.getSelectedRow(), 0)+""); 
+             if (nota<0 || nota>10) {
+                 nota=99.0;
+                 JOptionPane.showMessageDialog(this, "Debe agregar una nota entre 0 y 10");
+             }
+             
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Debe agregar un número");
+        }
+         if (idMat!=-1 && nota!=99.0) {
+         System.out.println(nota);   
+             System.out.println(idMat);
+             InscripcionData insData=new InscripcionData();
+             insData.actualizarNota(idAlu, idMat, nota);
+        }else{JOptionPane.showMessageDialog(this, "Algo salió mal!!");}
+         
          
     }//GEN-LAST:event_jBguardarActionPerformed
 
@@ -215,26 +239,23 @@ public class ManipulacionDeNotas extends javax.swing.JInternalFrame {
         }
     }
     private void cargarMateria(){
-       // borrarFila();
+        borrarFila();
         Alumno alu = (Alumno)jCBalumno.getSelectedItem();
         Materia mate = new Materia();
         InscripcionData inData = new InscripcionData();
-        Inscripcion ins = new Inscripcion();
         int id =alu.getIdAlumno();
-        
-        
+        ArrayList<Inscripcion> ins = inData.obtenerInscripciones();
         for (Materia materia : inData.obtenerMateriasCursadas(id) ){
-            modelo.addRow(new Object[]{materia.getIdMateria(),materia.getNombre(),
-                
-            
-      
-        
-   
-          
-              
+            double nota=0.0;
+            for (Inscripcion in : ins) {
+                if (in.getAlumno().getIdAlumno()==id && in.getMateria().getIdMateria()==materia.getIdMateria()) {
+                 nota=in.getNota();
+                }
             }
+            modelo.addRow(new Object[]{materia.getIdMateria(),materia.getNombre(),nota});
             }
     }
+    
     private void borrarFila(){
         int f=jTcargaDeNotas.getRowCount()-1;
         for(;f>=0;f--){
