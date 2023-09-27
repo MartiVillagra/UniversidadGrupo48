@@ -6,8 +6,10 @@ package universidadgrupo48.Vistas;
 
 import javax.swing.table.DefaultTableModel;
 import universidadgrupo48.AccesoDeDatos.AlumnoData;
+import universidadgrupo48.AccesoDeDatos.InscripcionData;
 import universidadgrupo48.AccesoDeDatos.MateriaData;
 import universidadgrupo48.Entidades.Alumno;
+import universidadgrupo48.Entidades.Inscripcion;
 import universidadgrupo48.Entidades.Materia;
 
 
@@ -141,13 +143,13 @@ public class AlumnosPorMateria extends javax.swing.JInternalFrame {
 
     private void jCBporMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBporMateriaActionPerformed
         // TODO add your handling code here:
-       
+      cargarAlumno();
     }//GEN-LAST:event_jCBporMateriaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBsalir;
-    private javax.swing.JComboBox<String> jCBporMateria;
+    private javax.swing.JComboBox<Materia> jCBporMateria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -170,7 +172,33 @@ public class AlumnosPorMateria extends javax.swing.JInternalFrame {
         Materia mate = new Materia();     
         MateriaData mat = new MateriaData();
         for(Materia materia : mat.listarMateria()){
-            jCBporMateria.addItem(materia.toString());
+            jCBporMateria.addItem(materia);
         }
     }
-}
+    private void borrarFila(){
+        int f=jTporMateria.getRowCount()-1;
+        for(;f>=0;f--){
+            modelo.removeRow(f);
+        }
+    }
+    
+    private void cargarAlumno(){
+        borrarFila();
+        Materia ma = (Materia) jCBporMateria.getSelectedItem(); 
+        Alumno alu = new Alumno();
+        Inscripcion ins = new Inscripcion();
+        InscripcionData inscri = new InscripcionData();
+
+        int idMa= ma.getIdMateria();
+
+        for (Alumno  alumno : inscri.obtenerAlumnosXMateria(idMa)) {
+            modelo.addRow(new Object[]{              
+                alumno.getIdAlumno(),
+                alumno.getApellido(),
+                alumno.getNombre(),
+                alumno.getDni(),
+            });    
+        } 
+    }
+}  
+

@@ -203,7 +203,7 @@ ArrayList<Inscripcion> inscripciones = new ArrayList();
     inscripcion ins WHERE ins.idMateria =ma.idMateria and ins.idAlumno=alu.idAlumno AND ins.idAlumno=3  */  
         ArrayList <Alumno> materiaAlumnos = new ArrayList();
         
-    String  sql ="SELECT anio, ma.nombre as materia, dni, apellido, alu.nombre "
+    String  sql ="SELECT anio, ma.nombre as materia,alu.idAlumno, dni, apellido, alu.nombre "
             + "FROM materia ma ,alumno alu, inscripcion ins WHERE ins.idMateria = ma.idMateria "
             + "and ins.idAlumno=alu.idAlumno AND ins.idMateria=?;";         
         try {
@@ -212,6 +212,7 @@ ArrayList<Inscripcion> inscripciones = new ArrayList();
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 Alumno alumno = new Alumno();
+                alumno.setIdAlumno(rs.getInt("idAlumno"));
                 alumno.setDni(rs.getInt("dni"));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));    
