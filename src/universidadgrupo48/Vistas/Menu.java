@@ -50,7 +50,7 @@ public class Menu extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 509, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -66,7 +66,8 @@ public class Menu extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Alumno");
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadgrupo48/Recursos/graduado.png"))); // NOI18N
+        jMenu1.setMinimumSize(new java.awt.Dimension(93, 43));
 
         jmFormularioAlumno.setText("Formulario de alumno");
         jmFormularioAlumno.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +79,8 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Materia");
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadgrupo48/Recursos/gestion-de-materiales.png"))); // NOI18N
+        jMenu2.setMinimumSize(new java.awt.Dimension(93, 43));
 
         jmFormularioMateria.setText("Formulario de materia");
         jmFormularioMateria.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +92,8 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Administracion");
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadgrupo48/Recursos/profesor.png"))); // NOI18N
+        jMenu3.setMinimumSize(new java.awt.Dimension(93, 43));
 
         jmManejoInscripcion.setText("Manejo de inscripciones");
         jmManejoInscripcion.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +113,8 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("Consulta");
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadgrupo48/Recursos/consultante.png"))); // NOI18N
+        jMenu4.setMinimumSize(new java.awt.Dimension(93, 43));
 
         jmAlumnoxNota.setText("Alumnos por materia");
         jmAlumnoxNota.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +126,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        salir.setText("Salir");
+        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadgrupo48/Recursos/salida.png"))); // NOI18N
         salir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 salirMouseClicked(evt);
