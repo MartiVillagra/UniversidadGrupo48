@@ -57,11 +57,11 @@ public class Menu extends javax.swing.JFrame {
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1086, Short.MAX_VALUE)
+            .addGap(0, 1098, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 597, Short.MAX_VALUE)
+            .addGap(0, 638, Short.MAX_VALUE)
         );
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadgrupo48/Recursos/graduado.png"))); // NOI18N
@@ -138,16 +138,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(escritorio)
-                .addContainerGap())
+            .addComponent(escritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 41, Short.MAX_VALUE))
+            .addComponent(escritorio)
         );
 
         pack();
