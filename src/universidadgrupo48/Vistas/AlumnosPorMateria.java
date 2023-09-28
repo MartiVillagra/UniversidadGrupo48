@@ -74,7 +74,7 @@ public class AlumnosPorMateria extends javax.swing.JInternalFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "DNI", "Apellido", "Nombre"
+                "ID", "Apellido", "Nombre", "Dni"
             }
         ));
         jScrollPane1.setViewportView(jTporMateria);
@@ -170,9 +170,9 @@ public class AlumnosPorMateria extends javax.swing.JInternalFrame {
     private void armarCabecera(){
     
         modelo.addColumn("ID");
-        modelo.addColumn("Dni");
         modelo.addColumn("Apellido");
         modelo.addColumn("Nombre");
+        modelo.addColumn("Dni");
         
     jTporMateria.setModel(modelo);
     }

@@ -31,14 +31,14 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         //import javax.swing.ImageIcon;
-        //ImageIcon icono  = new  ImageIcon(getClass().getResource("/universidadgrupo48/Recursos/fondito.jpg"));
-        //Image miImagenjpg = icono.getImage();
-        escritorio = new javax.swing.JDesktopPane();//{
+        ImageIcon icono  = new  ImageIcon(getClass().getResource("/universidadgrupo48/Recursos/fondito.png"));
+        Image miImagenjpg = icono.getImage();
+        escritorio = new javax.swing.JDesktopPane(){
 
-            //  public void paintComponent(Graphics g){
-                //    g.drawImage(miImagenjpg,0,0,getWidth(),getHeight(),this);
-                //}
-            //};
+            public void paintComponent(Graphics g){
+                g.drawImage(miImagenjpg,0,0,getWidth(),getHeight(),this);
+            }
+        };
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jmFormularioAlumno = new javax.swing.JMenuItem();
@@ -57,11 +57,11 @@ public class Menu extends javax.swing.JFrame {
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1098, Short.MAX_VALUE)
+            .addGap(0, 885, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGap(0, 438, Short.MAX_VALUE)
         );
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadgrupo48/Recursos/graduado.png"))); // NOI18N

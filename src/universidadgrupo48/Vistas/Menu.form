@@ -140,19 +140,19 @@
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="escritorio">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JDesktopPane();//{&#xa;&#xa;  //  public void paintComponent(Graphics g){&#xa;    //    g.drawImage(miImagenjpg,0,0,getWidth(),getHeight(),this);&#xa;    //}&#xa;//}"/>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="//import javax.swing.ImageIcon;&#xa;//ImageIcon icono  = new  ImageIcon(getClass().getResource(&quot;/universidadgrupo48/Recursos/fondito.jpg&quot;));&#xa;//Image miImagenjpg = icono.getImage();"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JDesktopPane(){&#xa;&#xa;    public void paintComponent(Graphics g){&#xa;        g.drawImage(miImagenjpg,0,0,getWidth(),getHeight(),this);&#xa;    }&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="//import javax.swing.ImageIcon;&#xa;ImageIcon icono  = new  ImageIcon(getClass().getResource(&quot;/universidadgrupo48/Recursos/fondito.png&quot;));&#xa;Image miImagenjpg = icono.getImage();"/>
       </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="1098" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="885" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="638" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="438" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
