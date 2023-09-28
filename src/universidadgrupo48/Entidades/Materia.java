@@ -5,6 +5,8 @@
  */
 package universidadgrupo48.Entidades;
 
+
+
 /**
  *
  * @author Nova
@@ -17,6 +19,8 @@ public class Materia {
 
     public Materia() {
     }
+   
+
 
     public Materia(int idMateria, String nombre, int anioMateria, boolean activo) {
         this.idMateria = idMateria;
