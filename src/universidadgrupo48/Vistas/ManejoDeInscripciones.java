@@ -50,7 +50,6 @@ public class ManejoDeInscripciones extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
-        setBackground(new java.awt.Color(204, 255, 255));
         setClosable(true);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
